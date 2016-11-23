@@ -1,8 +1,8 @@
 require 'open-uri'
 
 class ResumeParse < ActiveRecord::Base
-    def initialize
-        @url = "https://crowded.com/samples/sample_resume.txt"
+    def initialize(link)
+        @url = link
         @name_array = []
         @phone_array = []
         @email_array = []
