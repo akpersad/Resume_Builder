@@ -1,5 +1,5 @@
 class ResumeController < ApplicationController
     def home
-        @test = ResumeParse.new
+        @resume = ResumeParse.new
     end
 end
