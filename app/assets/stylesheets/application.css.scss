@@ -41,10 +41,21 @@ body {
 
 .panel {
   width: 50%;
+  position: relative;
+  left: 25%;
+  text-align: center;
 }
 
-.panel-primary {
-  //background: #002800;
+.panel-primary .panel-heading {
+  background: #565656;
+}
+
+.navbar {
+  background: #565656;
+}
+
+.navbar .navbar-brand {
+  color: #ffffff;
 }
 
 .btn-andrew {
