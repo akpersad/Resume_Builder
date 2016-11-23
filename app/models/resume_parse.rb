@@ -37,7 +37,6 @@ class ResumeParse < ActiveRecord::Base
         until @string.length == 0
             @education_array << @string.shift
         end
-        # binding.pry
     end
 
     def name
@@ -53,18 +52,45 @@ class ResumeParse < ActiveRecord::Base
     end
 
     def objective
-        @objective_array
+        @objective_array[1][0..-1]
     end
 
     def key_skills
-        @key_skills_array
+        @key_skills_array[1..-1]
     end
 
     def employment
-        @employment_array
+        formatted_array = []
+        @employment_array.shift
+        @employment_array = @employment_array.chunk { |i| i[0..5] == "Title:" }.to_a.map { |_, v| v }
+        counter = @employment_array.length
+        amount = counter / 2
+
+        amount.times do |x|
+            @employment_array[counter-2].push(*@employment_array[counter-1])
+            counter -= 2
+        end
+
+        @employment_array.each_with_index do |item, index|
+            if index %2 == 0
+                formatted_array.push(item)
+            end
+        end
+
+        formatted_array.each do |job|
+            3.times do |number|
+                job[number-1].gsub!(/(.+?):/, "")
+            end
+        end
+
+        formatted_array
     end
 
     def education
+        @education_array.shift
+        @education_array.each do |element|
+            element.gsub!(/(.+?):/, "")
+        end
         @education_array
     end
 end
