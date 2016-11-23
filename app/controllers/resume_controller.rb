@@ -1,5 +1,8 @@
 class ResumeController < ApplicationController
     def home
-        @resume = ResumeParse.new
+    end
+
+    def resume
+        @resume = ResumeParse.new(params['link'])
     end
 end

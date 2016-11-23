@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
     root to: 'resume#home'
+    get 'resume/resume' => 'resume#resume'
+    post 'resume/resume' => 'resume#resume'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
