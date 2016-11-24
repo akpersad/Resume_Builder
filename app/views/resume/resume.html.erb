@@ -1,7 +1,61 @@
-<%= @resume.name%><br>
-<%= @resume.phone%><br>
-<%= @resume.email%><br>
-<%= @resume.objective%><br>
-<%= @resume.key_skills%><br>
-<%= @resume.employment%><br>
-<%= @resume.education%>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" xmlns="http://www.w3.org/1999/html">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Resume Builder</a>
+    </div>
+  </div>
+</nav>
+
+<div class="generated-resume">
+  <div class="name">
+    <%= @resume.name %>
+      <div class="contact">
+        <%= @resume.phone %><br>
+        <%= @resume.email %><br>
+      </div>
+  </div>
+  <div class="objective">
+    <i>OBJECTIVE:</i> <%= @resume.objective %>
+    <hr>
+  </div>
+  <div class="key_sills">
+    <b><h3>Professional Skills</h3></b>
+    <% @resume.key_skills.each do |x| %>
+        <%= x %><br>
+        <% end %><br>
+  </div><br>
+
+  <div class="employment">
+    <hr>
+  <b><h3>Employment</h3></b>
+    <% @resume.employment.each do |company| %>
+        <%counter = 3%>
+        <%len = company.length%>
+      <div class="employment_company">
+        <div class="alignright">
+        <%=company[2]%><br>
+        </div>
+        <div class="everything_else">
+          <div class="headings">
+            <%=company[0]%><br>
+            <%=company[1]%><br>
+          </div>
+           <%until counter == len%>
+            <%=company[counter]%><br>
+            <%counter += 1%>
+           <% end %>
+        </div>
+        </div><br>
+     <% end %>
+  </div>
+
+  <div class="education">
+    <hr>
+    <b><h3>Education</h3></b>
+      <% element = @resume.education%>
+        <h4><%= element[1]%></h4>
+        <%= element[0]%> in <%= element[3] %><br>
+        Minor: <%= element[4] %><br>
+        GPA: <%= element[2]%>
+  </div>
+</div>

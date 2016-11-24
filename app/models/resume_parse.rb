@@ -81,6 +81,7 @@ class ResumeParse < ActiveRecord::Base
             3.times do |number|
                 job[number-1].gsub!(/(.+?):/, "")
             end
+            job[2] = job[2][6..-1]
         end
 
         formatted_array
