@@ -41,13 +41,86 @@ body {
 
 .panel {
   width: 50%;
+  position: relative;
+  left: 25%;
+  text-align: center;
 }
 
-.panel-primary {
-  //background: #002800;
+.panel-primary .panel-heading {
+  background: #565656;
+}
+
+.navbar {
+  background: #565656;
+}
+
+.navbar .navbar-brand {
+  color: #ffffff;
 }
 
 .btn-andrew {
   background: #565656;
   color: #ffffff;
+}
+
+.generated-resume{
+  background: white;
+  margin: 10px;
+  height: 1024px;
+  max-width: 50%;
+  min-width: 800px;
+  position: relative;
+  display:inline-block;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.vertical_line{
+  border-left: thick solid #ff0000;
+}
+
+.name{
+  display:inline-block;
+  position: relative;
+  left: 60%;
+  font-size: 22px;
+}
+
+.contact{
+  font-size: 16px;
+}
+
+.objective{
+  position: relative;
+  top: 80px;
+  font-size: large;
+  display: inline-block;
+}
+
+.key_sills{
+  display: inline-block;
+  position: relative;
+  top: 100px;
+}
+
+.employment{
+  //display: inline-block;
+  position: relative;
+  top: 100px;
+}
+
+.education{
+  display: inline-block;
+  position: relative;
+  top: 100px;
+}
+
+.headings{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.alignright{
+  float: right;
 }

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <p class="navbar-brand">Resume Builder</p>
+      <a class="navbar-brand" href="/">Resume Builder</a>
     </div>
   </div>
 </nav>
@@ -9,19 +9,15 @@
 <div class="panel panel-primary">
 
   <div class="panel-heading">
-  <%= form_tag({controller: 'resume', action: 'resume'}, method: 'post') do %>
-      <%= label_tag(:link, 'Enter Link:') %>
+    <%= form_tag({controller: 'resume', action: 'resume'}, method: 'post') do %>
+        <%= label_tag(:link, 'Enter Link:') %>
+        </div>
+        <div class="panel-body">
+          <div class="form-group has-success has-feedback">
+            <input id="link" name="link" type="text" class="form-control"/>
+          </div>
+          <input name="commit" type="submit" value="Submit" class="btn btn-andrew"/>
+        </div>
+    <% end %>
+
     </div>
-    <div class="panel-body">
-      <%= text_field_tag(:link) %>
-      <input name="commit" type="submit" value="Search" class="btn btn-andrew"/>
-    </div>
-  <% end %>
-
-</div>
-
-<script type="text/javascript">
-  $(document).ready(function () {
-
-  });
-</script>
